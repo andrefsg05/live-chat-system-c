@@ -1,0 +1,50 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential gcc
+    
+    - name: Build Server
+      run: |
+        cd src/server
+        make clean
+        make
+    
+    - name: Build Client
+      run: |
+        cd src/client
+        make clean
+        make
+    
+    - name: Verify Executables
+      run: |
+        [ -f src/server/server ] && echo "✓ Server built successfully"
+        [ -f src/client/client ] && echo "✓ Client built successfully"
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install cppcheck
+      run: sudo apt-get install -y cppcheck
+    
+    - name: Check Code Style
+      run: |
+        cppcheck --enable=all --suppress=missingIncludeSystem \
+          src/client/ src/server/ || true
