@@ -416,7 +416,7 @@ Este projeto foi desenvolvido como trabalho académico para a disciplina de Rede
 ---
 
 ## Autores
-- Miguel Rocha
-- Miguel Pombeiro
+- [Miguel Rocha](https://github.com/miguelrocha1)
+- [Miguel Pombeiro](https://github.com/MiguelPombeiro)
 - André Gonçalves
-- André Zhan
+- [André Zhan](https://github.com/andr-zhan)
