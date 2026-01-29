@@ -23,7 +23,7 @@ Uma aplicação de chat em tempo real desenvolvida em C, com suporte a mensagens
 
 | Componente | Tecnologia | Detalhes |
 |-----------|-----------|---------|
-| **Linguagem** | C (C99) | POSIX-compliant |
+| **Linguagem** | C | POSIX-compliant |
 | **Protocolo** | UDP | Comunicação cliente-servidor |
 | **Transferência de Ficheiros** | TCP | Protocolo complementar para ficheiros grandes |
 | **Concorrência** | POSIX Threads | Múltiplas threads para I/O simultâneo |
